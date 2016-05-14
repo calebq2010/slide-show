@@ -173,7 +173,7 @@
 	</div>
 </div>
 
-<script>
+<script> 
 
 $('.pause-button').on('click', function() {
 	stop();	

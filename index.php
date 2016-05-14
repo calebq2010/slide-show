@@ -134,6 +134,11 @@
 	top: 6px;
 	right: 17px;
 }
+
+	.button-click-color {
+	background-color: gray;
+	}
+
 	</style>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"   integrity="sha256-55Jz3pBCF8z9jBO1qQ7cIf0L+neuPTD1u7Ytzrp2dqo="   crossorigin="anonymous"></script>
@@ -142,7 +147,7 @@
 <div class="slide-show">
 
 <div class="header">
-	<div class="play-button"></div>
+	<div class="play-button button-click-color" ></div>
 	<div class="pause-button"></div>
 </div>
 	<div class="arrow-left arrow">
@@ -169,6 +174,19 @@
 </div>
 
 <script>
+
+$('.pause-button').on('click', function() {
+	stop();	
+	$(this).addClass("button-click-color");
+	$(".play-button").removeClass("button-click-color");
+});
+
+
+$('.play-button').on('click', function() {
+	start();
+	$(this).addClass("button-click-color");
+	$(".pause-button").removeClass("button-click-color");
+});
 
 var container = $('.slide-show'),
 	slider = container.find('.slider'),
